@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="spotify.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            width: 240px;
+            background-color: #040404;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            bottom: 90px; /* Leave space for music player */
+        }
+
+        .sidebar h2 {
+            color: #1DB954;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar ul li a {
+            color: #b3b3b3;
+            text-decoration: none;
+        }
+
+        .sidebar ul li a:hover {
+            color: #1DB954;
+        }
+
+        /* Main content styling */
+        .main-content {
+            margin-left: 240px;
+            padding: 20px;
+            background-color: #181818;
+            height: calc(100vh - 90px);
+            overflow-y: auto;
+        }
+
+        .playlist {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .playlist-item {
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .playlist-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .playlist-item h3 {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .playlist-item p {
+            font-size: 14px;
+            color: #b3b3b3;
+        }
+
+        /* Music player styling */
+        .music-player {
+            background-color: #282828;
+            height: 90px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .music-player .controls {
+            display: flex;
+            align-items: center;
+        }
+
+        .music-player .controls button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            margin: 0 10px;
+        }
+
+        .music-player .now-playing {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .music-player .now-playing p {
+            margin: 0;
+            font-size: 14px;
+            color: #b3b3b3;
+        }
+
+    </style>
+</head>
+<body>
+    
+  <script src="spotify.js"></script>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Spotify</h2>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">Your Library</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content area -->

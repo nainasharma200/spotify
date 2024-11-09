@@ -1,0 +1,275 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    background-color: #121212;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background-color: #040404;
+    position: fixed;
+    top: 0;
+    bottom: 90px; /* Adjust to leave room for music player */
+    padding: 20px;
+}
+
+.sidebar h2 {
+    color: #1DB954;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a:hover {
+    color: white;
+}
+
+.sidebar ul li a span {
+    margin-right: 10px;
+}
+
+.sidebar ul li a.active {
+    color: white;
+    font-weight: bold;
+}
+
+.sidebar .library-section {
+    margin-top: 40px;
+}
+
+.sidebar .library-section h3 {
+    color: #b3b3b3;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 240px;
+    padding: 20px;
+    background-color: #181818;
+    height: calc(100vh - 90px); /* Adjust for the player at the bottom */
+    overflow-y: auto;
+}
+
+.main-content h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.playlist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.playlist-item {
+    width: 200px;
+    margin: 10px;
+    background-color: #282828;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.playlist-item:hover {
+    background-color: #333;
+}
+
+.playlist-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.playlist-item h3 {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.playlist-item p {
+    font-size: 14px;
+    color: #b3b3b3;
+}
+
+/* Music Player */
+.music-player {
+    background-color: #282828;
+    height: 90px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border-top: 1px solid #282828;
+}
+
+.music-player .controls {
+    display: flex;
+    align-items: center;
+}
+
+.music-player .controls button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.music-player .controls button:hover {
+    color: #1DB954;
+}
+
+.music-player .now-playing {
+    text-align: center;
+    flex-grow: 1;
+    font-size: 14px;
+    color: #b3b3b3;
+}
+
+.music-player .volume-control {
+    display: flex;
+    align-items: center;
+}
+
+.music-player .volume-control input[type="range"] {
+    width: 100px;
+    margin-left: 10px;
+    background-color: transparent;
+    appearance: none;
+}
+
+.music-player .volume-control input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #1DB954;
+    height: 4px;
+}
+
+.music-player .volume-control input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.music-player .volume-control input[type="range"]::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Scrollbar Styling */
+.main-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.main-content::-webkit-scrollbar-track {
+    background: #181818;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 4px;
+}
+
+.main-content::-webkit-scrollbar-thumb:hover {
+    background: #1DB954;
+}
+
+/* Make Sidebar and Main Content responsive */
+.sidebar {
+    width: 240px;
+    background-color: #040404;
+    position: fixed;
+    top: 0;
+    bottom: 90px;
+    padding: 20px;
+}
+
+.main-content {
+    margin-left: 240px;
+    padding: 20px;
+    background-color: #181818;
+    height: calc(100vh - 90px);
+    overflow-y: auto;
+}
+
+/* Responsive Design for Mobile */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: 60px;
+        position: fixed;
+        bottom: 0;
+        top: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-bottom: 60px;
+    }
+
+    .playlist {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .playlist-item {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .music-player {
+        position: fixed;
+        top: auto;
+        bottom: 60px;
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+}
+
+/* Responsive for small mobile devices */
+@media screen and (max-width: 480px) {
+    .playlist-item {
+        width: 100%;
+    }
+
+    .sidebar h2 {
+        font-size: 18px;
+    }
+}
